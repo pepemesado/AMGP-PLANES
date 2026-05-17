@@ -29,8 +29,11 @@ export default function Catalog() {
 
   const placeholderVehicles = [
     { brand: 'Mercedes-Benz', model: 'AMG GT 63 S', year: 2024, price: 185000, km: 0 },
-    { brand: 'Porsche', model: '911 Turbo S', year: 2023, price: 210000, km: 2500 },
     { brand: 'BMW', model: 'M760i xDrive', year: 2024, price: 175000, km: 0 },
+    { brand: 'Porsche', model: '911 Turbo S', year: 2023, price: 210000, km: 2500 },
+    { brand: 'BMW', model: 'M440i xDrive', year: 2024, price: 95000, km: 500 },
+    { brand: 'Volkswagen', model: 'Touareg V8 TDI', year: 2023, price: 125000, km: 1200 },
+    { brand: 'Mercedes-Benz', model: 'GLE 63 AMG Coupé', year: 2024, price: 155000, km: 0 },
   ];
 
   const displayVehicles = vehicles.length > 0 ? vehicles : placeholderVehicles;
@@ -54,7 +57,7 @@ export default function Catalog() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, staggerChildren: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {displayVehicles.map((vehicle, index) => (
             <motion.div
