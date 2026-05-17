@@ -61,7 +61,7 @@ export default function Catalog() {
         >
           {displayVehicles.map((vehicle, index) => (
             <motion.div
-              key={vehicle.id || index}
+              key={('id' in vehicle ? vehicle.id : String(index)) || index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
