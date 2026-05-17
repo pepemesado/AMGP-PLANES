@@ -30,7 +30,7 @@ export async function createLead(
 ) {
   const { data, error } = await supabase
     .from('leads')
-    .insert([{ nombre, email, telefono, vehiculo, mensaje }])
+    .insert([{ nombre, email, telefono, vehiculo, mensaje }] as any)
     .select();
 
   if (error) {
