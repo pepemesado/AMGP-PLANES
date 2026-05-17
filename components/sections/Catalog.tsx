@@ -27,13 +27,13 @@ export default function Catalog() {
     fetchVehicles();
   }, []);
 
-  const placeholderVehicles = [
-    { brand: 'Mercedes-Benz', model: 'AMG GT 63 S', year: 2024, price: 185000, km: 0 },
-    { brand: 'BMW', model: 'M760i xDrive', year: 2024, price: 175000, km: 0 },
-    { brand: 'Porsche', model: '911 Turbo S', year: 2023, price: 210000, km: 2500 },
-    { brand: 'BMW', model: 'M440i xDrive', year: 2024, price: 95000, km: 500 },
-    { brand: 'Volkswagen', model: 'Touareg V8 TDI', year: 2023, price: 125000, km: 1200 },
-    { brand: 'Mercedes-Benz', model: 'GLE 63 AMG Coupé', year: 2024, price: 155000, km: 0 },
+  const placeholderVehicles: Vehicle[] = [
+    { id: '1', brand: 'Mercedes-Benz', model: 'AMG GT 63 S', year: 2024, price: 185000, km: 0, image_url: null, available: true, created_at: new Date().toISOString() },
+    { id: '2', brand: 'BMW', model: 'M760i xDrive', year: 2024, price: 175000, km: 0, image_url: null, available: true, created_at: new Date().toISOString() },
+    { id: '3', brand: 'Porsche', model: '911 Turbo S', year: 2023, price: 210000, km: 2500, image_url: null, available: true, created_at: new Date().toISOString() },
+    { id: '4', brand: 'BMW', model: 'M440i xDrive', year: 2024, price: 95000, km: 500, image_url: null, available: true, created_at: new Date().toISOString() },
+    { id: '5', brand: 'Volkswagen', model: 'Touareg V8 TDI', year: 2023, price: 125000, km: 1200, image_url: null, available: true, created_at: new Date().toISOString() },
+    { id: '6', brand: 'Mercedes-Benz', model: 'GLE 63 AMG Coupé', year: 2024, price: 155000, km: 0, image_url: null, available: true, created_at: new Date().toISOString() },
   ];
 
   const displayVehicles = vehicles.length > 0 ? vehicles : placeholderVehicles;
@@ -59,9 +59,9 @@ export default function Catalog() {
           transition={{ duration: 0.6, staggerChildren: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {displayVehicles.map((vehicle, index) => (
+          {displayVehicles.map((vehicle) => (
             <motion.div
-              key={('id' in vehicle ? vehicle.id : String(index)) || index}
+              key={vehicle.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
