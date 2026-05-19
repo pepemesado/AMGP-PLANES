@@ -15,7 +15,7 @@ export default function Hero() {
         <div
           className="w-1/2 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1609706228149-25b00d91e595?w=900&q=90')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&q=90')`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-brand-black/60" />
@@ -77,7 +77,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="flex flex-col sm:flex-row gap-6"
+          className="flex flex-col sm:flex-row gap-12 md:gap-16"
         >
           <Link href="#catalog" className="group">
             <button className="px-12 py-4 bg-brand-garnet hover:bg-brand-garnet-light text-brand-white font-playfair font-bold text-lg transition-all duration-300 flex items-center gap-3 shadow-2xl hover:shadow-brand-garnet/50 tracking-wide uppercase">
