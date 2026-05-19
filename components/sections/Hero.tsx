@@ -15,7 +15,7 @@ export default function Hero() {
         <div
           className="w-1/2 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1503376780353-7e6692d845d7?w=800&q=80')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1609706228149-25b00d91e595?w=900&q=90')`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-brand-black/60" />
@@ -69,31 +69,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center text-brand-silver text-lg md:text-2xl max-w-3xl mb-16 font-light tracking-wide"
         >
-          Importación de Hyperchoques y Vehículos de Lujo desde Europa
+          Importación de Supercoches y Vehículos de Lujo desde Europa
         </motion.p>
-
-        {/* Stats Row */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="flex flex-col md:flex-row gap-8 md:gap-20 mb-16 text-center md:text-left"
-        >
-          <div>
-            <p className="text-4xl md:text-5xl font-playfair font-bold text-brand-garnet">50+</p>
-            <p className="text-brand-silver text-sm mt-2 uppercase tracking-wider">Vehículos Disponibles</p>
-          </div>
-          <div className="hidden md:block w-px bg-brand-garnet/30" />
-          <div>
-            <p className="text-4xl md:text-5xl font-playfair font-bold text-brand-garnet">10</p>
-            <p className="text-brand-silver text-sm mt-2 uppercase tracking-wider">Años de Experiencia</p>
-          </div>
-          <div className="hidden md:block w-px bg-brand-garnet/30" />
-          <div>
-            <p className="text-4xl md:text-5xl font-playfair font-bold text-brand-garnet">6</p>
-            <p className="text-brand-silver text-sm mt-2 uppercase tracking-wider">Países Europeos</p>
-          </div>
-        </motion.div>
 
         {/* CTA Buttons */}
         <motion.div

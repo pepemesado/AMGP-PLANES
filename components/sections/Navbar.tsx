@@ -26,20 +26,24 @@ export default function Navbar() {
   ];
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-brand-black/98 backdrop-blur-xl border-b border-brand-garnet/20 shadow-2xl shadow-brand-garnet/10'
-          : 'bg-transparent'
-      }`}
-    >
+    <>
+      {/* Red Top Bar */}
+      <div className="fixed top-0 left-0 right-0 h-1 bg-brand-garnet z-[60]" />
+
+      <nav
+        className={`fixed top-1 w-full z-50 transition-all duration-500 ${
+          isScrolled
+            ? 'bg-brand-black/98 backdrop-blur-xl border-b border-brand-garnet/20 shadow-2xl shadow-brand-garnet/10'
+            : 'bg-transparent'
+        }`}
+      >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1">
+          <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl font-playfair font-bold">
               <span className="text-brand-garnet">AMGP</span>
-              <span className="text-brand-silver ml-2">PLANES</span>
+              <span className="text-brand-silver">PLANES</span>
             </span>
           </Link>
 
@@ -91,6 +95,7 @@ export default function Navbar() {
           </div>
         )}
       </div>
-    </nav>
+      </nav>
+    </>
   );
 }
