@@ -1,12 +1,19 @@
 import { createClient } from '@supabase/supabase-js';
 import { Database } from './database.types';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey);
+export const supabase = supabaseUrl && supabaseAnonKey
+  ? createClient<Database>(supabaseUrl, supabaseAnonKey)
+  : null;
 
 export async function getVehicles() {
+  if (!supabase) {
+    console.warn('Supabase not configured');
+    return [];
+  }
+
   const { data, error } = await supabase
     .from('vehicles')
     .select('*')
@@ -28,6 +35,11 @@ export async function createLead(
   vehiculo: string,
   mensaje: string
 ) {
+  if (!supabase) {
+    console.warn('Supabase not configured');
+    return [];
+  }
+
   const { data, error } = await supabase
     .from('leads')
     .insert([{ nombre, email, telefono, vehiculo, mensaje }] as any)
