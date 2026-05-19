@@ -9,8 +9,15 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
       {/* Dual Background Images */}
       <div className="absolute inset-0 flex">
-        {/* Left Side - Dark */}
-        <div className="w-1/2 bg-brand-black" />
+        {/* Left Side - Vehicle Background */}
+        <div
+          className="w-1/2 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('https://cdn.artphotolimited.com/images/63186a20bd40b809d5bac6c0/1000x1000/1965-porsche-911-iii.jpg')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-black/60 to-transparent" />
+        </div>
         {/* Right Side - Vehicle Background */}
         <div
           className="w-1/2 bg-cover bg-center"
