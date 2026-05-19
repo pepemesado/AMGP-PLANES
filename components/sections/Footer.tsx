@@ -6,7 +6,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-black border-t border-brand-carbon py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-brand-black border-t border-brand-garnet/20 py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 right-0 w-72 h-72 bg-brand-garnet/5 rounded-full blur-3xl" />
+
+      <div className="relative z-10">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Logo y Descripción */}
@@ -78,9 +82,11 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-brand-carbon pt-8 text-center text-sm text-brand-silver">
-          <p>© {currentYear} AMGP PLANES. Todos los derechos reservados.</p>
+        <div className="border-t border-brand-garnet/20 pt-8 text-center text-sm text-brand-silver/80">
+          <p className="mb-2">© {currentYear} AMGP PLANES. Todos los derechos reservados.</p>
+          <p className="text-xs text-brand-silver/50">Vehículos de Lujo Premium | Importación Europea</p>
         </div>
+      </div>
       </div>
     </footer>
   );
