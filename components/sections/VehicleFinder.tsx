@@ -8,84 +8,99 @@ export default function VehicleFinder() {
   const [searchQuery, setSearchQuery] = useState('');
 
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-brand-black border-t border-brand-garnet/20">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-40 px-4 sm:px-6 lg:px-8 bg-brand-black border-t border-brand-garnet/20">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="mb-20"
         >
-          <p className="text-brand-silver text-sm tracking-[0.2em] uppercase mb-4">Búsqueda Inteligente</p>
-          <h2 className="text-5xl md:text-6xl font-playfair font-bold text-brand-white mb-6">
-            Encuentre su Vehículo de Ensueño
-          </h2>
-          <p className="text-brand-silver text-lg">
-            Explore nuestro catálogo global y encuentre exactamente lo que busca
+          <p className="text-brand-garnet text-xs tracking-[0.3em] uppercase font-semibold mb-4">
+            Búsqueda Avanzada
           </p>
+          <h2 className="text-7xl md:text-8xl font-playfair font-bold text-brand-white">
+            Busca tu<br />Perfecto Match
+          </h2>
         </motion.div>
 
-        {/* Search Box */}
+        {/* Search Container */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="bg-gradient-to-r from-brand-carbon to-brand-black border border-brand-garnet/30 p-8 rounded-xl shadow-2xl"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="space-y-8"
         >
-          <div className="flex flex-col md:flex-row gap-4 items-center">
-            {/* Input */}
-            <div className="flex-1 w-full">
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-garnet w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Marca, modelo, año..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 bg-brand-black border border-brand-garnet/20 text-brand-white placeholder-brand-silver/50 focus:outline-none focus:border-brand-garnet focus:ring-1 focus:ring-brand-garnet transition-all"
-                />
-              </div>
-            </div>
-
-            {/* Filters */}
-            <div className="flex gap-3 w-full md:w-auto">
-              <select className="px-4 py-4 bg-brand-black border border-brand-garnet/20 text-brand-silver focus:outline-none focus:border-brand-garnet transition-all text-sm">
-                <option>Tipo</option>
-                <option>Deportivo</option>
-                <option>Gran Turismo</option>
-                <option>SUV</option>
-                <option>Sedán</option>
-              </select>
-
-              <select className="px-4 py-4 bg-brand-black border border-brand-garnet/20 text-brand-silver focus:outline-none focus:border-brand-garnet transition-all text-sm">
-                <option>Rango Precio</option>
-                <option>50K - 100K</option>
-                <option>100K - 200K</option>
-                <option>200K+</option>
-              </select>
-            </div>
-
-            {/* Button */}
-            <button className="w-full md:w-auto px-8 py-4 bg-brand-garnet hover:bg-brand-garnet-light text-brand-white font-playfair font-bold uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-brand-garnet/50">
-              Buscar
-            </button>
+          {/* Main Search */}
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Marca, modelo, año..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full px-8 py-6 bg-transparent border-b-2 border-brand-garnet/50 text-brand-white placeholder-brand-silver/40 focus:outline-none focus:border-brand-garnet transition-all duration-300 font-playfair text-2xl"
+            />
+            <Search className="absolute right-8 top-1/2 -translate-y-1/2 text-brand-garnet w-6 h-6" />
           </div>
 
-          {/* Quick Stats */}
-          <div className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t border-brand-garnet/20">
-            <div className="text-center">
-              <p className="text-3xl font-playfair font-bold text-brand-garnet">50+</p>
-              <p className="text-brand-silver text-sm mt-2">Vehículos Activos</p>
+          {/* Filters */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <div>
+              <select className="w-full px-0 py-3 bg-transparent border-b border-brand-silver/30 text-brand-white focus:outline-none focus:border-brand-garnet transition-all duration-300 font-inter text-sm uppercase tracking-wider">
+                <option className="bg-brand-black">Tipo de Vehículo</option>
+                <option className="bg-brand-black">Deportivo</option>
+                <option className="bg-brand-black">Gran Turismo</option>
+                <option className="bg-brand-black">SUV</option>
+                <option className="bg-brand-black">Sedán</option>
+              </select>
             </div>
-            <div className="text-center">
-              <p className="text-3xl font-playfair font-bold text-brand-garnet">6</p>
-              <p className="text-brand-silver text-sm mt-2">Países Europeos</p>
+
+            <div>
+              <select className="w-full px-0 py-3 bg-transparent border-b border-brand-silver/30 text-brand-white focus:outline-none focus:border-brand-garnet transition-all duration-300 font-inter text-sm uppercase tracking-wider">
+                <option className="bg-brand-black">Rango de Precio</option>
+                <option className="bg-brand-black">50K - 100K €</option>
+                <option className="bg-brand-black">100K - 200K €</option>
+                <option className="bg-brand-black">200K+</option>
+              </select>
             </div>
-            <div className="text-center">
-              <p className="text-3xl font-playfair font-bold text-brand-garnet">24/7</p>
-              <p className="text-brand-silver text-sm mt-2">Asesoría Disponible</p>
+
+            <div>
+              <select className="w-full px-0 py-3 bg-transparent border-b border-brand-silver/30 text-brand-white focus:outline-none focus:border-brand-garnet transition-all duration-300 font-inter text-sm uppercase tracking-wider">
+                <option className="bg-brand-black">Marca</option>
+                <option className="bg-brand-black">Ferrari</option>
+                <option className="bg-brand-black">Lamborghini</option>
+                <option className="bg-brand-black">Porsche</option>
+              </select>
             </div>
+          </div>
+
+          {/* Button */}
+          <div className="flex justify-center pt-8">
+            <button className="px-16 py-5 bg-brand-garnet hover:bg-brand-garnet-light text-brand-white font-playfair font-bold text-xl uppercase tracking-wider transition-all duration-300 shadow-2xl hover:shadow-brand-garnet/50">
+              Explorar
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="grid grid-cols-3 gap-12 mt-32 pt-16 border-t border-brand-garnet/20"
+        >
+          <div>
+            <p className="text-5xl font-playfair font-bold text-brand-garnet mb-2">50+</p>
+            <p className="text-brand-silver uppercase text-xs tracking-widest">Vehículos en Stock</p>
+          </div>
+          <div>
+            <p className="text-5xl font-playfair font-bold text-brand-garnet mb-2">6</p>
+            <p className="text-brand-silver uppercase text-xs tracking-widest">Países Europeos</p>
+          </div>
+          <div>
+            <p className="text-5xl font-playfair font-bold text-brand-garnet mb-2">24/7</p>
+            <p className="text-brand-silver uppercase text-xs tracking-widest">Asesoría Premium</p>
           </div>
         </motion.div>
       </div>
