@@ -1,9 +1,10 @@
 import Navbar from '@/components/sections/Navbar';
 import Hero from '@/components/sections/Hero';
+import FeaturedCollection from '@/components/sections/FeaturedCollection';
+import ModelCatalog from '@/components/sections/ModelCatalog';
+import VehicleFinder from '@/components/sections/VehicleFinder';
 import Services from '@/components/sections/Services';
 import WhyUs from '@/components/sections/WhyUs';
-import Catalog from '@/components/sections/Catalog';
-import About from '@/components/sections/About';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
 
@@ -12,10 +13,11 @@ export default function Home() {
     <main className="bg-brand-black">
       <Navbar />
       <Hero />
+      <FeaturedCollection />
+      <ModelCatalog />
+      <VehicleFinder />
       <Services />
       <WhyUs />
-      <Catalog />
-      <About />
       <Contact />
       <Footer />
     </main>
