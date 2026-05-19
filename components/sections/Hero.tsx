@@ -57,7 +57,7 @@ export default function Hero() {
         >
           <h1 className="text-7xl md:text-9xl lg:text-10xl font-playfair font-bold leading-none">
             <span className="text-brand-garnet block">AMGP</span>
-            <span className="text-brand-white block">PLANES</span>
+            <span className="text-brand-garnet block">PLANES</span>
           </h1>
         </motion.div>
 
@@ -74,7 +74,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center text-brand-silver text-lg md:text-2xl max-w-3xl mb-16 font-light tracking-wide"
+          className="text-center text-brand-garnet text-lg md:text-2xl max-w-3xl mb-16 font-light tracking-wide"
         >
           Importación de Supercoches y Vehículos de Lujo desde Europa
         </motion.p>
