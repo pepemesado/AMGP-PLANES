@@ -59,7 +59,7 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="px-6 py-2.5 bg-brand-garnet text-brand-white hover:bg-brand-garnet-light transition-all duration-300 font-inter text-sm font-semibold shadow-lg hover:shadow-brand-garnet/50">
+            <button className="px-6 py-2.5 bg-brand-garnet text-brand-garnet hover:bg-brand-garnet-light transition-all duration-300 font-inter text-sm font-semibold shadow-lg hover:shadow-brand-garnet/50 border-2 border-brand-garnet">
               Solicitar Vehículo
             </button>
           </div>

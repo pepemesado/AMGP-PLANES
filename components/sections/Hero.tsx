@@ -87,13 +87,13 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-12 md:gap-16"
         >
           <Link href="#catalog" className="group">
-            <button className="px-12 py-4 bg-brand-garnet hover:bg-brand-garnet-light text-brand-white font-playfair font-bold text-lg transition-all duration-300 flex items-center gap-3 shadow-2xl hover:shadow-brand-garnet/50 tracking-wide uppercase">
+            <button className="px-12 py-4 bg-brand-garnet hover:bg-brand-garnet-light text-brand-garnet font-playfair font-bold text-lg transition-all duration-300 flex items-center gap-3 shadow-2xl hover:shadow-brand-garnet/50 tracking-wide uppercase border-2 border-brand-garnet">
               VER CATÁLOGO
               <ArrowRight size={22} className="group-hover:translate-x-2 transition-transform" />
             </button>
           </Link>
           <Link href="#contact" className="group">
-            <button className="px-12 py-4 border-2 border-brand-silver text-brand-silver hover:bg-brand-silver hover:text-brand-black font-playfair font-bold text-lg transition-all duration-300 shadow-2xl tracking-wide uppercase">
+            <button className="px-12 py-4 border-2 border-brand-garnet text-brand-garnet hover:bg-brand-garnet hover:text-brand-garnet font-playfair font-bold text-lg transition-all duration-300 shadow-2xl tracking-wide uppercase">
               CONTACTAR
             </button>
           </Link>
