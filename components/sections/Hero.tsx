@@ -5,120 +5,124 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15, delayChildren: 0.2 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
-      {/* Background Image with Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1400&q=80')`,
-        }}
-      >
-        {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/80 to-brand-black/40" />
-        {/* Accent Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-brand-black" />
+      {/* Dual Background Images */}
+      <div className="absolute inset-0 flex">
+        {/* Left Side - Dark */}
+        <div className="w-1/2 bg-brand-black" />
+        {/* Right Side - Vehicle Background */}
+        <div
+          className="w-1/2 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent to-brand-black/60" />
+        </div>
       </div>
 
-      {/* Content */}
+      {/* Content - Centered with Brand Name */}
       <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 text-left max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 py-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="relative z-10 w-full h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
       >
-        {/* Accent Line */}
+        {/* Top Label */}
         <motion.div
-          variants={itemVariants}
-          className="flex items-center gap-3 mb-8"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center mb-12"
         >
-          <div className="w-12 h-1 bg-brand-garnet" />
-          <span className="text-brand-silver text-sm tracking-widest uppercase font-inter">Lujo Premium Europa</span>
+          <span className="text-brand-silver text-xs tracking-[0.3em] uppercase font-inter">
+            Vehículos Premium
+          </span>
         </motion.div>
 
-        {/* Main Headline */}
-        <motion.h1
-          variants={itemVariants}
-          className="text-5xl md:text-7xl lg:text-8xl font-playfair font-bold mb-6 leading-tight"
+        {/* Main Brand Name - HUGE and Centered */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="text-center mb-12"
         >
-          <span className="text-brand-white">Vehículos</span>
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-garnet to-brand-garnet-light">
-            de Ensueño
-          </span>
-        </motion.h1>
+          <h1 className="text-7xl md:text-9xl lg:text-10xl font-playfair font-bold leading-none">
+            <span className="text-brand-garnet block">AMGP</span>
+            <span className="text-brand-white block">PLANES</span>
+          </h1>
+        </motion.div>
 
-        {/* Subtitle */}
+        {/* Separator Line */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="w-32 h-1 bg-gradient-to-r from-brand-garnet to-brand-silver mb-12"
+        />
+
+        {/* Tagline */}
         <motion.p
-          variants={itemVariants}
-          className="text-lg md:text-2xl text-brand-silver-light mb-8 max-w-3xl leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-center text-brand-silver text-lg md:text-2xl max-w-3xl mb-16 font-light tracking-wide"
         >
-          Importamos los hyperchoques y vehículos premium más exclusivos de Europa.
-          <span className="text-brand-garnet font-semibold"> Sin intermediarios. Sin límites.</span>
+          Importación de Hyperchoques y Vehículos de Lujo desde Europa
         </motion.p>
 
-        {/* Stats */}
+        {/* Stats Row */}
         <motion.div
-          variants={itemVariants}
-          className="grid grid-cols-3 gap-8 mb-12 max-w-2xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="flex flex-col md:flex-row gap-8 md:gap-20 mb-16 text-center md:text-left"
         >
-          <div className="border-l-2 border-brand-garnet pl-4">
-            <p className="text-3xl font-playfair font-bold text-brand-white">50+</p>
-            <p className="text-brand-silver text-sm">Vehículos en Catálogo</p>
+          <div>
+            <p className="text-4xl md:text-5xl font-playfair font-bold text-brand-garnet">50+</p>
+            <p className="text-brand-silver text-sm mt-2 uppercase tracking-wider">Vehículos Disponibles</p>
           </div>
-          <div className="border-l-2 border-brand-garnet pl-4">
-            <p className="text-3xl font-playfair font-bold text-brand-white">10</p>
-            <p className="text-brand-silver text-sm">Años de Experiencia</p>
+          <div className="hidden md:block w-px bg-brand-garnet/30" />
+          <div>
+            <p className="text-4xl md:text-5xl font-playfair font-bold text-brand-garnet">10</p>
+            <p className="text-brand-silver text-sm mt-2 uppercase tracking-wider">Años de Experiencia</p>
           </div>
-          <div className="border-l-2 border-brand-garnet pl-4">
-            <p className="text-3xl font-playfair font-bold text-brand-white">6</p>
-            <p className="text-brand-silver text-sm">Países de Origen</p>
+          <div className="hidden md:block w-px bg-brand-garnet/30" />
+          <div>
+            <p className="text-4xl md:text-5xl font-playfair font-bold text-brand-garnet">6</p>
+            <p className="text-brand-silver text-sm mt-2 uppercase tracking-wider">Países Europeos</p>
           </div>
         </motion.div>
 
         {/* CTA Buttons */}
         <motion.div
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
           className="flex flex-col sm:flex-row gap-6"
         >
           <Link href="#catalog" className="group">
-            <button className="px-10 py-4 bg-brand-garnet hover:bg-brand-garnet-light text-brand-white font-inter font-bold text-lg transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-brand-garnet/50 hover:shadow-2xl">
-              Ver Catálogo
-              <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+            <button className="px-12 py-4 bg-brand-garnet hover:bg-brand-garnet-light text-brand-white font-playfair font-bold text-lg transition-all duration-300 flex items-center gap-3 shadow-2xl hover:shadow-brand-garnet/50 tracking-wide uppercase">
+              VER CATÁLOGO
+              <ArrowRight size={22} className="group-hover:translate-x-2 transition-transform" />
             </button>
           </Link>
           <Link href="#contact" className="group">
-            <button className="px-10 py-4 border-2 border-brand-silver text-brand-silver hover:bg-brand-silver hover:text-brand-black font-inter font-bold text-lg transition-all duration-300 shadow-lg">
-              Solicitar Consulta
+            <button className="px-12 py-4 border-2 border-brand-silver text-brand-silver hover:bg-brand-silver hover:text-brand-black font-playfair font-bold text-lg transition-all duration-300 shadow-2xl tracking-wide uppercase">
+              CONTACTAR
             </button>
           </Link>
         </motion.div>
       </motion.div>
 
-      {/* Floating Elements */}
+      {/* Bottom Accent */}
       <motion.div
-        className="absolute bottom-10 right-10 text-brand-garnet opacity-20"
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 4, repeat: Infinity }}
-      >
-        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="60" cy="60" r="55" stroke="currentColor" strokeWidth="2" />
-          <path d="M60 20 L100 100 L20 100 Z" fill="none" stroke="currentColor" strokeWidth="2" />
-        </svg>
-      </motion.div>
+        className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-garnet via-brand-silver to-brand-garnet"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 1.2, delay: 1.4 }}
+      />
     </section>
   );
 }
