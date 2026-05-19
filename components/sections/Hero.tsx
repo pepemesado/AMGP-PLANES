@@ -15,7 +15,7 @@ export default function Hero() {
         <div
           className="w-1/2 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1503376780353-7e6692d845d7?w=800&q=80')`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-brand-black/60" />
