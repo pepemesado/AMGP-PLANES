@@ -15,7 +15,7 @@ export default function Hero() {
         <div
           className="w-1/2 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&q=90')`,
+            backgroundImage: `url('https://cdn.artphotolimited.com/images/63186a20bd40b809d5bac6c0/1000x1000/1965-porsche-911-face.jpg')`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-brand-black/60" />
